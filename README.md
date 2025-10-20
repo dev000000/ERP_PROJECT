@@ -31,6 +31,30 @@ ERP_PROJECT/
 ├── .gitignore
 └── README.md                  # Tài liệu này
 ```
+## Giao diện cơ bản
+#1:
+
+<img width="1002" height="605" alt="image" src="https://github.com/user-attachments/assets/212b351a-b31c-4197-8aa9-9966254b98b1" />
+#2:
+
+<img width="1324" height="828" alt="image" src="https://github.com/user-attachments/assets/d8f6e5bd-9609-4fe6-8237-549918365263" />
+#3:
+
+<img width="1329" height="747" alt="image" src="https://github.com/user-attachments/assets/f00c4163-b961-44b8-bf7c-4d7d7e5ac3d0" />
+#4:
+
+<img width="1326" height="747" alt="image" src="https://github.com/user-attachments/assets/2d38890b-eab8-4297-b35b-5f12ca26f815" />
+#5:
+
+<img width="1332" height="746" alt="image" src="https://github.com/user-attachments/assets/3c9fdcea-4974-4fed-87a8-5a7de18fe601" />
+#6:
+
+<img width="1332" height="740" alt="image" src="https://github.com/user-attachments/assets/bb4a35de-cab4-4a31-b522-46533003e637" />
+#7:
+
+<img width="1336" height="745" alt="image" src="https://github.com/user-attachments/assets/c9263a11-d1e8-431c-866e-25df66c2d55f" />
+
+
 
 ## Yêu cầu hệ thống
 
