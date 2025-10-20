@@ -57,7 +57,7 @@ ERP_PROJECT/
    DB_NAME_NHACUNGCAP=QuanLyNhaCungCap
    ```
 4. Tạo cơ sở dữ liệu SQL Server và chạy các script để thiết lập schema : run ERP_API_2/SQLQueryERP.sql trong SQL server
-5. Cấu hình 
+5. Check config: https://github.com/dev000000/ERP_PROJECT/blob/main/ERP_API_2/README.md
 
 ### Backend ERP_API_3_4 (MySQL)
 1. Di chuyển vào thư mục: `cd ERP_API_3_4`
