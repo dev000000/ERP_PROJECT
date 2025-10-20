@@ -1,15 +1,15 @@
 # ERP Project
 
 ## Giới thiệu
-
 Dự án ERP (Enterprise Resource Planning) là một hệ thống quản lý tài nguyên doanh nghiệp, tập trung vào quản lý nhân sự, quản lý nhà cung cấp, quản lý khách hàng;
+Với sự giúp đỡ của : https://github.com/dinhgiang1-git (ERP_API_3_4)  vs https://github.com/cranix-ed (ERP_API_2)
 
 Dự án được xây dựng với:
 - **Backend 1 (ERP_API_2)**: Sử dụng Node.js + Express + SQL Server (MSSQL) để xử lý API quản lý nhân sự. 
 - **Backend 2 (ERP_API_3_4)**: Sử dụng Node.js + Express + MySQL để xử lý API quản lý nhà cung cấp, quản lý khách hàng;
 - **Frontend (matx-react-final)**: Giao diện người dùng được xây dựng bằng React.js (dựa trên template MatX), hỗ trợ tương tác với backend.
 
-Dự án hỗ trợ phát triển và triển khai linh hoạt, với hai lựa chọn backend để phù hợp với môi trường cơ sở dữ liệu khác nhau.
+Dự án được viết vội vàng (3 days) với mục đích kịp tiến độ nên còn nhiều thiếu sót: 
 
 ## Cấu trúc dự án
 
@@ -47,72 +47,57 @@ ERP_PROJECT/
 2. Cài đặt dependencies: `npm install`
 3. Cấu hình biến môi trường (`.env`):
    ```
-   DB_HOST=your_sql_server_host
-   DB_USER=your_username
-   DB_PASSWORD=your_password
-   DB_NAME=your_database_name
-   PORT=3000  # Hoặc cổng mong muốn
+   PORT=[PORT_BACKEND]
+   DB_HOST=[HOST_DB]
+   DB_PORT=[PORT_DB]
+   DB_USER=[USER_DB]
+   DB_PASS=[PASSWORD_DB]
+   DB_NAME_NHANSU=QuanLyNhanSu
+   DB_NAME_KHACHHANG=QuanLyKhachHang
+   DB_NAME_NHACUNGCAP=QuanLyNhaCungCap
    ```
-4. Tạo cơ sở dữ liệu SQL Server và chạy các script migration (nếu có) để thiết lập schema.
+4. Tạo cơ sở dữ liệu SQL Server và chạy các script để thiết lập schema : run ERP_API_2/SQLQueryERP.sql trong SQL server
+5. Cấu hình 
 
 ### Backend ERP_API_3_4 (MySQL)
 1. Di chuyển vào thư mục: `cd ERP_API_3_4`
 2. Cài đặt dependencies: `npm install`
-3. Cấu hình biến môi trường (`.env`):
+3. Cấu hình file (`db.js`): ERP_API_3_4\src\config\db.js
    ```
-   DB_HOST=localhost
-   DB_USER=root
-   DB_PASSWORD=your_password
-   DB_NAME=erp_db
-   PORT=3001  # Hoặc cổng mong muốn (tránh trùng với backend khác)
+   host: [HOST_DB],
+   port: [PORT_DB],
+   user: [USER_DB],
+   password: [PASSWORD_DB],
+   database: 'ERP',
+   
    ```
-4. Tạo cơ sở dữ liệu MySQL và chạy các script migration (nếu có) để thiết lập schema.
-
+4. Tạo cơ sở dữ liệu MySQL là `ERP` và chạy các script để thiết lập schema : ERP_API_3_4\ERP.sql
+   
 ### Frontend (matx-react-final)
 1. Di chuyển vào thư mục: `cd matx-react-final`
 2. Cài đặt dependencies (sử dụng Yarn được khuyến nghị vì có `yarn.lock`): `yarn install`
    - Nếu dùng npm: `npm install` (nhưng có thể gặp xung đột lock file).
-3. Cấu hình API endpoints trong file config (thường là `src/config.js` hoặc tương tự):
+3. Cấu hình API endpoints trong .env:
    ```
-   API_BASE_URL = 'http://localhost:3000'  // Cho ERP_API_2
-   // Hoặc 'http://localhost:3001' cho ERP_API_3_4
+   VITE_API_ENDPOINT=http://localhost:9717 (cho ERP_2)
+   VITE_API_ENDPOINT_2=http://localhost:3001 (cho ERP_3_4)
    ```
 
 ## Chạy ứng dụng
 
 ### Backend ERP_API_2
-- Chạy ở chế độ development: `npm run dev` (sử dụng Nodemon để tự động reload).
-- Chạy production: `npm start`.
-
+- Chạy ở chế độ development: `npm run dev` 
 ### Backend ERP_API_3_4
 - Chạy ứng dụng: `npm start`.
 
 ### Frontend
-- Chạy development server: `yarn start` (mở trình duyệt tại `http://localhost:3000`).
-- Build production: `yarn build`.
+- Chạy development server: `yarn dev` (mở trình duyệt tại `http://localhost:5173`).
+- Sử dụng tk : admin , mk : admin
 
 **Lưu ý**: 
 - Chạy backend trước khi khởi động frontend để đảm bảo API sẵn sàng.
 - Sử dụng các cổng khác nhau cho các backend nếu chạy song song (ví dụ: 3000 cho ERP_API_2, 3001 cho ERP_API_3_4).
 - Kiểm tra logs console để debug lỗi kết nối DB hoặc API.
 
-## Scripts hữu ích
-
-- **Lint code** (cho backend): `npm run lint` (nếu có ESLint config).
-- **Test** (nếu có): `npm test`.
-
-## Đóng góp
-
-- Fork repo và tạo Pull Request.
-- Đảm bảo code tuân thủ ESLint và test trước khi commit.
-
-## License
-
-ISC License. Xem file `LICENSE` (nếu có) hoặc liên hệ tác giả.
-
-## Liên hệ
-
-- Tác giả: [Your Name]
-- Email: [your.email@example.com]
 
 Cảm ơn bạn đã sử dụng dự án! Nếu có vấn đề, hãy mở issue trên GitHub.
